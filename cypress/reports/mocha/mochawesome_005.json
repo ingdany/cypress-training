@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-05-21T02:58:46.229Z",
+    "end": "2021-05-21T02:58:50.051Z",
+    "duration": 3822,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3781a7a0-33d0-4c10-b3d6-4a87ea886e3f",
+      "title": "",
+      "fullFile": "cypress/integration/examples/QAM/TC04_customCommand.spec.js",
+      "file": "cypress/integration/examples/QAM/TC04_customCommand.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "72f020a0-5bbe-41c9-8fea-e49e75922d21",
+          "title": "Create and mark-unmark as favorite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a post",
+              "fullTitle": "Create and mark-unmark as favorite Create a post",
+              "timedOut": null,
+              "duration": 2754,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//cy.contains(\"New Post\").click();\ncy.get('ul.navbar-nav').children().contains('New Post').click();\ncy.hash().should(\"include\", \"#/editor\");\ncy.get('form').within($form => {\n  cy.get('input').first().type(\"Test\");\n  cy.get('input').eq(1).type(\"Test 1\");\n  cy.get('textarea').last().type(\"Test 2\");\n  cy.contains(\"Publish Article\").click();\n});\ncy.url().should(\"include\", \"article\");",
+              "err": {},
+              "uuid": "013ec280-de72-4a5e-a5f4-165d0f59b01e",
+              "parentUUID": "72f020a0-5bbe-41c9-8fea-e49e75922d21",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mark-unmark as favorite",
+              "fullTitle": "Create and mark-unmark as favorite Mark-unmark as favorite",
+              "timedOut": null,
+              "duration": 1044,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//cy.get(\".nav-link\").contains(\"dperez\").click();\ncy.get(\"ul.navbar-nav\").children().contains(\"dperez\").click();\ncy.contains(\"My Articles\").should(\"be.visible\");\ncy.get(\".ion-heart\").first().click();\ncy.contains(\"Favorited Articles\").click();\ncy.url().should(\"include\", \"favorites\");\ncy.get(\".ion-heart\").first().click();",
+              "err": {},
+              "uuid": "b630b967-0e1a-4183-bfdb-2589c7da3017",
+              "parentUUID": "72f020a0-5bbe-41c9-8fea-e49e75922d21",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "013ec280-de72-4a5e-a5f4-165d0f59b01e",
+            "b630b967-0e1a-4183-bfdb-2589c7da3017"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3798,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

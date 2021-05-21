@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-05-21T02:57:57.381Z",
+    "end": "2021-05-21T02:58:15.893Z",
+    "duration": 18512,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3e2efbb6-f2d1-4e89-b26b-63e10fae9a31",
+      "title": "",
+      "fullFile": "cypress/integration/examples/Locators.spec.js",
+      "file": "cypress/integration/examples/Locators.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "409dccf9-cd24-4211-beec-7cf448090827",
+          "title": "Locating Elements",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify types of locators",
+              "fullTitle": "Locating Elements Verify types of locators",
+              "timedOut": null,
+              "duration": 16795,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\ncy.visit(\"https://demo.nopcommerce.com/\"); // Opens the url for\ncy.get(\"#small-searchterms\").type(\"Apple MacBook Pro 13-inch\");\ncy.get(\"[type='submit']\").click();\ncy.scrollTo(\"bottom\");\ncy.get(\".product-box-add-to-cart-button\").click();\ncy.get(\"#product_enteredQuantity_4\").clear().type('2');\ncy.scrollTo(\"top\");\ncy.get(\"#add-to-cart-button-4\").click();\ncy.wait(5000); // 5 seconds\ncy.get(\"#topcartlink > a > span.cart-label\").click();\ncy.wait(3000); // 3 seconds\ncy.get(\".product-unit-price\").contains(\"$1,800.00\");",
+              "err": {},
+              "uuid": "3905e2ca-00d6-4409-9bf2-e6b331f56511",
+              "parentUUID": "409dccf9-cd24-4211-beec-7cf448090827",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3905e2ca-00d6-4409-9bf2-e6b331f56511"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16795,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

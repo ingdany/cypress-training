@@ -1,0 +1,150 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-05-21T02:58:37.781Z",
+    "end": "2021-05-21T02:58:42.856Z",
+    "duration": 5075,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "40594e54-d499-46b7-a267-33494265d15a",
+      "title": "",
+      "fullFile": "cypress/integration/examples/QAM/TC03_identifyElements.spec.js",
+      "file": "cypress/integration/examples/QAM/TC03_identifyElements.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d8191958-e616-4894-8173-2a288563c057",
+          "title": "Create and mark-unmark as favorite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign in",
+              "fullTitle": "Create and mark-unmark as favorite Sign in",
+              "timedOut": null,
+              "duration": 2222,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://react-redux.realworld.io/#/login\");\ncy.title().should(\"eq\", \"Conduit\");\ncy.location(\"protocol\").should(\"eq\", \"https:\"); //cy.get('input[type=\"email\"]').type('dperez@gmail.com')\n//cy.get('input[type=\"password\"]').type('12345678')\n//cy.get('.btn').contains('Sign in').should('be.visible').click()\ncy.get(\"form\").within($form => {\n  cy.get('input[type=\"email\"]').type(\"dperez@gmail.com\");\n  cy.get('input[type=\"password\"]').type(\"12345678\");\n  cy.root().submit();\n});\ncy.contains(\"Your Feed\", {\n  timeout: 10000\n}).should(\"be.visible\");",
+              "err": {},
+              "uuid": "7302884e-dc29-4fa7-812c-e97b91cc8b48",
+              "parentUUID": "d8191958-e616-4894-8173-2a288563c057",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create a post",
+              "fullTitle": "Create and mark-unmark as favorite Create a post",
+              "timedOut": null,
+              "duration": 1283,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//cy.contains(\"New Post\").click();\ncy.get('ul.navbar-nav').children().contains('New Post').click();\ncy.hash().should(\"include\", \"#/editor\");\ncy.get('form').within($form => {\n  cy.get('input').first().type(\"Test\");\n  cy.get('input').eq(1).type(\"Test 1\");\n  cy.get('textarea').last().type(\"Test 2\"); //cy.get('input[placeholder=\"Article Title\"').type(\"Test\");\n  //cy.get('input[placeholder=\"What\\'s this article about?\"]').type(\"Test 1\");\n  //cy.get('textarea[placeholder=\"Write your article (in markdown)\"]').type(\"Test 2\");\n  cy.contains(\"Publish Article\").click();\n});\ncy.url().should(\"include\", \"article\");",
+              "err": {},
+              "uuid": "e0a329a2-6a8e-47c6-b0cb-f55b23a87b6c",
+              "parentUUID": "d8191958-e616-4894-8173-2a288563c057",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mark-unmark as favorite",
+              "fullTitle": "Create and mark-unmark as favorite Mark-unmark as favorite",
+              "timedOut": null,
+              "duration": 1465,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//cy.get(\".nav-link\").contains(\"dperez\").click();\ncy.get(\"ul.navbar-nav\").children().contains(\"dperez\").click();\ncy.contains(\"My Articles\").should(\"be.visible\");\ncy.get(\":nth-child(1) > .article-meta > .pull-xs-right > .btn > .ion-heart\").first().click();\ncy.contains(\"Favorited Articles\").click();\ncy.url().should(\"include\", \"favorites\");\ncy.get(\":nth-child(1) > .article-meta > .pull-xs-right > .btn > .ion-heart\").click(); //cy.reload()\n//cy.contains('No articles are here... yet.').should('be.visible')\n//cy.go('back')",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > Cannot read property 'forEach' of undefined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > Cannot read property 'forEach' of undefined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at module.exports (https://react-redux.realworld.io/main.js:28386:23)\n    at module.exports (https://react-redux.realworld.io/main.js:28304:12)\n    at dispatch (https://react-redux.realworld.io/main.js:27689:23)\n    at https://react-redux.realworld.io/main.js:28271:8\n    at https://react-redux.realworld.io/main.js:28253:8\n    at Object.dispatch (https://react-redux.realworld.io/main.js:28175:19)\n    at store.dispatch.type (https://react-redux.realworld.io/main.js:28240:18)",
+                "diff": null
+              },
+              "uuid": "3f68cb55-2722-4893-ad73-33365ff0bd9f",
+              "parentUUID": "d8191958-e616-4894-8173-2a288563c057",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7302884e-dc29-4fa7-812c-e97b91cc8b48",
+            "e0a329a2-6a8e-47c6-b0cb-f55b23a87b6c"
+          ],
+          "failures": [
+            "3f68cb55-2722-4893-ad73-33365ff0bd9f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4970,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
