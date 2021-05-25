@@ -72,3 +72,9 @@ To generate HTML Report
 `marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports`
 
 `npm run test && npm run combine-reports && npm run generate-report`
+
+## Cucumber
+
+## Install cucumber-prepocessors
+
+`npm install --save-dev cypress-cucumber-preprocessor`
